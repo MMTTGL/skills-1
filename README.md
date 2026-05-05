@@ -18,6 +18,9 @@ npx skills add vercel-labs/agent-skills
 # GitHub shorthand (owner/repo)
 npx skills add vercel-labs/agent-skills
 
+# Single-skill repo (top-level SKILL.md)
+npx skills add MMTTGL/html-to-pdf-hires
+
 # Full GitHub URL
 npx skills add https://github.com/vercel-labs/agent-skills
 
