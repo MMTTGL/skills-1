@@ -330,7 +330,7 @@ ${inner}
   <div style="position: absolute; left: 283px; top: 150px; width: 700px; font-size: 40px; font-weight: 400; line-height: 1.55; color: ${WHITE};">Gerçek hastalara ait sağlık verilerinin özelliklerinden yararlanılarak, gerçekte var olmayan hastalara ait <span style="color: ${TEAL};">sentetik sağlık verileri</span> oluşturulabilir.</div>
   <div style="position: absolute; left: 283px; top: 435px; width: 660px; font-size: 29px; font-weight: 400; line-height: 1.55; color: ${BODY};">Bu veriler, gerçek hasta kayıtlarını birebir kullanmadan yapay zekâ sistemlerinin geliştirilmesi ve eğitilmesinde kullanılabilir.</div>
   ${svg}
-  ${captionRow('gerçek hasta verileri', 'sentetik sağlık verisi', 140, 600)}`;
+  ${captionRow('gerçek hastalar', 'sentetik sağlık verisi', 160, 555)}`;
   writeFileSync('Ornek.dc.html', page('Slayt 4 — Örnek', inner));
 }
 
