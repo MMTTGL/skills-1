@@ -1,0 +1,39 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Slayt 1 — Kapak",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Uretim.dc.html",
+      "title": "Slayt 2 — Üretim",
+      "x": 1180,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Yontemler.dc.html",
+      "title": "Slayt 3 — Yöntemler",
+      "x": 2360,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Ornek.dc.html",
+      "title": "Slayt 4 — Örnek",
+      "x": 3540,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
