@@ -171,11 +171,15 @@ function kicker(text, top) {
   return `<div class="mono" style="position: absolute; left: 80px; top: ${top}px; font-size: 19px; font-weight: 700; letter-spacing: 0.3em; color: ${TEAL};">${text}</div>`;
 }
 
-function captionRow(left, right, leftX, rightX) {
+// captions are centred on the figure they label; the +0.16em nudge cancels the
+// trailing letter-spacing so the ink, not the box, sits on the centre line.
+function captionRow(left, right, leftCx, rightCx) {
+  const cap = (text, cx, color) =>
+    `<div class="mono" style="position: absolute; left: ${cx}px; top: 1040px; transform: translateX(calc(-50% + 0.16em)); font-size: 22px; letter-spacing: 0.32em; white-space: nowrap; color: ${color};">${text}</div>`;
   return `
-  <div style="position: absolute; left: 110px; right: 120px; top: 1012px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>
-  <div class="mono" style="position: absolute; left: ${leftX}px; top: 1040px; font-size: 22px; letter-spacing: 0.32em; white-space: nowrap; color: ${CAP_GREY};">${left}</div>
-  <div class="mono" style="position: absolute; left: ${rightX}px; top: 1040px; font-size: 22px; letter-spacing: 0.32em; white-space: nowrap; color: ${TEAL_DIM};">${right}</div>`;
+  <div style="position: absolute; left: 110px; right: 110px; top: 1012px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>
+  ${cap(left, leftCx, CAP_GREY)}
+  ${cap(right, rightCx, TEAL_DIM)}`;
 }
 
 function page(title, inner) {
@@ -212,7 +216,7 @@ ${inner}
   ${kicker('SORU', 150)}
   <div style="position: absolute; left: 283px; top: 108px; width: 720px; font-size: 108px; font-weight: 700; line-height: 1.16; color: ${WHITE};">Sentetik veri nasıl üretilir<span style="color: ${TEAL};">?</span></div>
   ${svg}
-  ${captionRow('gerçek veriler', 'sentetik veri', 225, 660)}`;
+  ${captionRow('gerçek veriler', 'sentetik veri', 305, 775)}`;
   writeFileSync('Main.dc.html', page('Slayt 1 — Kapak', inner));
 }
 
@@ -221,9 +225,9 @@ ${inner}
   const gs = 0.62, ts = 0.62;
   const svg =
     `<svg width="1080" height="360" viewBox="0 0 1080 360" style="position: absolute; left: 0; top: 620px;" xmlns="http://www.w3.org/2000/svg">` +
-    flowLines(51, 320, 90, 300, 400, 100, 290, 6, '#4a6f8d', 0.4) +
-    flowLines(52, 690, 100, 290, 762, 90, 300, 6, TEAL_DIM, 0.4) +
-    greyGroup(3, 195, 55, gs) +
+    flowLines(51, 380, 90, 300, 400, 100, 290, 6, '#4a6f8d', 0.4) +
+    flowLines(52, 690, 100, 290, 765, 90, 300, 6, TEAL_DIM, 0.4) +
+    greyGroup(3, 250, 55, gs) +
     // model box
     `<rect x="405" y="42" width="280" height="290" rx="34" fill="none" stroke="#4a6f8d" stroke-width="1.6" stroke-dasharray="6 8"/>` +
     `<text x="545" y="86" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="17" letter-spacing="5" fill="${HDR}">MODEL</text>` +
@@ -242,14 +246,14 @@ ${inner}
       for (const l of layers) for (const y of l.ys) nodes += `<circle cx="${l.x}" cy="${y}" r="8" fill="${l.col}"/>`;
       return edges + nodes;
     })() +
-    tealFigure(4, 880, 60, ts) +
+    tealFigure(4, 838, 60, ts) +
     `</svg>`;
   const inner = `${chrome()}
   ${kicker('ÜRETİM', 165)}
   <div style="position: absolute; left: 283px; top: 150px; width: 700px; font-size: 43px; font-weight: 400; line-height: 1.58; color: ${WHITE};">Sentetik veriler; <span style="color: ${TEAL};">algoritmalar, simülasyonlar veya üretken modeller</span> kullanılarak, belirli bir kullanım amacı için yapay olarak üretilir.</div>
   <div style="position: absolute; left: 283px; top: 452px; width: 660px; font-size: 29px; font-weight: 400; line-height: 1.55; color: ${BODY};">Amaç, gerçek dünyadaki verilerin istatistiksel özelliklerini gerçeğe yeterince benzer biçimde yansıtan yeni veriler oluşturmaktır.</div>
   ${svg}
-  ${captionRow('gerçek veriler', 'sentetik veri', 118, 762)}`;
+  ${captionRow('gerçek veriler', 'sentetik veri', 250, 838)}`;
   writeFileSync('Uretim.dc.html', page('Slayt 2 — Üretim', inner));
 }
 
@@ -281,10 +285,10 @@ ${inner}
   // neural network
   const net = (() => {
     const layers = [
-      { x: 640, n: 3, col: GREY_DOT },
-      { x: 736, n: 5, col: '#6fc3c8' },
-      { x: 832, n: 5, col: TEAL_DOT },
-      { x: 928, n: 3, col: TEAL_DOT },
+      { x: 636, n: 3, col: GREY_DOT },
+      { x: 732, n: 5, col: '#6fc3c8' },
+      { x: 828, n: 5, col: TEAL_DOT },
+      { x: 924, n: 3, col: TEAL_DOT },
     ];
     const yFor = (n, i) => 605 + (i - (n - 1) / 2) * 64;
     let edges = '', nodes = '';
@@ -307,7 +311,7 @@ ${inner}
   ${svg}
   <div style="position: absolute; left: 110px; width: 380px; top: 830px; font-size: 26px; line-height: 1.5; color: ${BODY};">Gerçek verilerdeki dağılımlar ve değişkenler arasındaki ilişkiler modellenerek yeni veri örnekleri oluşturulur.</div>
   <div style="position: absolute; left: 590px; width: 380px; top: 830px; font-size: 26px; line-height: 1.5; color: ${BODY};">Gerçek verilerdeki karmaşık örüntüleri öğrenen modeller aracılığıyla yeni veri örnekleri oluşturulur.</div>
-  ${captionRow('istatistiksel yöntemler', 'derin öğrenme', 122, 660)}`;
+  ${captionRow('istatistik', 'derin öğrenme', 300, 780)}`;
   writeFileSync('Yontemler.dc.html', page('Slayt 3 — Yöntemler', inner));
 }
 
@@ -330,7 +334,7 @@ ${inner}
   <div style="position: absolute; left: 283px; top: 150px; width: 700px; font-size: 40px; font-weight: 400; line-height: 1.55; color: ${WHITE};">Gerçek hastalara ait sağlık verilerinin özelliklerinden yararlanılarak, gerçekte var olmayan hastalara ait <span style="color: ${TEAL};">sentetik sağlık verileri</span> oluşturulabilir.</div>
   <div style="position: absolute; left: 283px; top: 435px; width: 660px; font-size: 29px; font-weight: 400; line-height: 1.55; color: ${BODY};">Bu veriler, gerçek hasta kayıtlarını birebir kullanmadan yapay zekâ sistemlerinin geliştirilmesi ve eğitilmesinde kullanılabilir.</div>
   ${svg}
-  ${captionRow('gerçek hastalar', 'sentetik sağlık verisi', 160, 555)}`;
+  ${captionRow('gerçek hastalar', 'sentetik hasta', 285, 820)}`;
   writeFileSync('Ornek.dc.html', page('Slayt 4 — Örnek', inner));
 }
 
