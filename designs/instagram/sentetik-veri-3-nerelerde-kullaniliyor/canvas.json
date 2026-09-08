@@ -1,0 +1,47 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Slayt 1 — Kapak",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Alanlar.dc.html",
+      "title": "Slayt 2 — Alanlar",
+      "x": 1180,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Saglik.dc.html",
+      "title": "Slayt 3 — Sağlık",
+      "x": 2360,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Finans.dc.html",
+      "title": "Slayt 4 — Finans",
+      "x": 3540,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Otonom.dc.html",
+      "title": "Slayt 5 — Otonom sürüş",
+      "x": 4720,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

@@ -51,3 +51,6 @@ package-lock.json
 bin/_chunks/
 bin/cli-wrapper.mjs
 bin/cli.d.mts
+
+# design canvas payloads are generated from the artboards
+designs/instagram/**/sentetik-veri-*.html
