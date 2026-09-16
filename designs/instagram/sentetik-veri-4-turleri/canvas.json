@@ -1,0 +1,39 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Slayt 1 — Kapak",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Turler.dc.html",
+      "title": "Slayt 2 — Türler",
+      "x": 1180,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "OrnekTamamen.dc.html",
+      "title": "Slayt 3 — Tamamen sentetik",
+      "x": 2360,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "OrnekKismen.dc.html",
+      "title": "Slayt 4 — Kısmen sentetik",
+      "x": 3540,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
