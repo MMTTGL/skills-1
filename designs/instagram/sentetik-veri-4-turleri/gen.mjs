@@ -79,12 +79,12 @@ const typeLabel = (text, top) =>
 {
   const inner = `${chrome()}
   ${kicker('TÜRLER', 165)}
-  ${tableSvg(21, 170, 300, 5)}
+  ${tableSvg(21, 170, 310, 5)}
   ${typeLabel('TAMAMEN SENTETİK VERİ', 150)}
   <div style="position: absolute; left: 283px; top: 200px; width: 700px; font-size: 32px; line-height: 1.5; color: ${WHITE};">Orijinal veri setindeki gerçek değerlerin yerine, bu verilerin özelliklerini ve aralarındaki ilişkileri yansıtan <span style="color: ${TEAL};">yeni ve yapay veriler</span> oluşturulur.</div>
   <div style="position: absolute; left: 283px; top: 430px; width: 660px; font-size: 27px; line-height: 1.5; color: ${BODY};">Ortaya çıkan veri seti tamamen sentetik verilerden oluşur.</div>
   <div style="position: absolute; left: 283px; right: 80px; top: 570px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>
-  ${tableSvg(22, 170, 790, 3)}
+  ${tableSvg(22, 170, 800, 3)}
   ${typeLabel('KISMEN SENTETİK VERİ', 640)}
   <div style="position: absolute; left: 283px; top: 690px; width: 700px; font-size: 32px; line-height: 1.5; color: ${WHITE};">Orijinal veri setindeki <span style="color: ${TEAL};">yalnızca bazı gerçek değerler</span>, bunların yerine oluşturulan sentetik değerlerle değiştirilir.</div>
   <div style="position: absolute; left: 283px; top: 920px; width: 660px; font-size: 27px; line-height: 1.5; color: ${BODY};">Diğer gerçek değerler ise orijinal haliyle korunur.</div>`;
@@ -95,12 +95,11 @@ const typeLabel = (text, top) =>
 {
   const inner = `${chrome()}
   ${kicker('ÖRNEK', 165)}
-  ${tableSvg(31, 170, 650, 5)}
+  ${tableSvg(31, 170, 635, 5, 7)}
   ${typeLabel('TAMAMEN SENTETİK VERİ', 150)}
   <div style="position: absolute; left: 283px; top: 200px; width: 700px; font-size: 31px; line-height: 1.5; color: ${WHITE};">Yeni bir hasta kayıt sistemini test etmek isteyen bir hastane, gerçek hastaların bilgilerini kullanmak yerine, gerçekte var olmayan hastalara ait <span style="color: ${TEAL};">tamamen yapay kayıtlar</span> oluşturabilir:</div>
   ${fieldList(510, [['Yaş', true], ['Teşhis', true], ['Kullanılan ilaç', true], ['Tedavi', true]])}
-  ${takeaway(850, 'Böylece sistem gerçek hasta kayıtları kullanılmadan test edilebilir.')}
-  <div style="position: absolute; left: 283px; top: 980px; width: 700px; font-size: 27px; line-height: 1.5; color: ${BODY};">Veri setindeki hasta kayıtlarının tamamı yapay olarak oluşturulduğu için bu, tamamen sentetik veriye bir örnektir.</div>`;
+  ${takeaway(880, 'Böylece sistem gerçek hasta kayıtları kullanılmadan test edilebilir.')}`;
   writeFileSync('OrnekTamamen.dc.html', page('Slayt 3 — Örnek: tamamen sentetik', inner));
 }
 
@@ -108,7 +107,7 @@ const typeLabel = (text, top) =>
 {
   const inner = `${chrome()}
   ${kicker('ÖRNEK', 165)}
-  ${tableSvg(41, 170, 760, 3)}
+  ${tableSvg(41, 170, 728, 3, 8)}
   ${typeLabel('KISMEN SENTETİK VERİ', 150)}
   <div style="position: absolute; left: 283px; top: 200px; width: 700px; font-size: 30px; line-height: 1.5; color: ${WHITE};">Kanser hastalarıyla yürütülen bir araştırmada, verilerin başka araştırmacılarla daha güvenli paylaşılabilmesi için hastaların <span style="color: ${TEAL};">kimliklerinin belirlenmesi riskini artırabilecek bilgiler</span> sentetik verilerle değiştirilebilir.</div>
   <div style="position: absolute; left: 283px; top: 430px; width: 680px; font-size: 27px; line-height: 1.5; color: ${BODY};">Buna karşılık, araştırma açısından önemli klinik verilerin bir kısmı gerçek haliyle korunur.</div>
