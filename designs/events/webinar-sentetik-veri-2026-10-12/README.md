@@ -7,6 +7,9 @@
 ortaktır: lacivert zemin, noktalı figürler, Source Serif 4 başlık,
 harf aralıklı JetBrains Mono etiketler.
 
+Düzen ortalıdır: seri başlığı sol üstte, format etiketi (WEBİNAR) sağ
+üstte, diğer bütün bloklar sayfa merkezine hizalıdır.
+
 Görsel: dört "görüşme karesi" — kesikli turkuaz çerçeveli konuşmacı
 ve gri katılımcılar.
 
@@ -20,6 +23,6 @@ ve gri katılımcılar.
 
 ## Not
 
-Saat bilgisi afişte `18:00` olarak yazılıdır. Zoom daveti Amsterdam/Berlin
-saatine göre 18:00 olarak ayarlanmıştır; bu Türkiye saatiyle 19:00'a denk
-gelir. Yayından önce hangi saat diliminin yazılacağı teyit edilmelidir.
+Saat afişte çift yazılıdır: `18:00 CEST` (Zoom davetindeki Amsterdam/Berlin
+saati) ve `19:00 TSİ` (Türkiye saati). 12 Ekim 2026'da Orta Avrupa yaz
+saati yürürlüktedir, bu nedenle iki saat arasında bir saat fark vardır.
