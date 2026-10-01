@@ -36,8 +36,9 @@ function callTiles(cx, y0, w, h, gap) {
 const label = (text, color = TEAL) =>
   `<div class="mono" style="font-size: 17px; font-weight: 700; letter-spacing: 0.3em; color: ${color};">${text}</div>`;
 
+// left-aligned cells so each column has one clean edge
 const metaCell = (name, lines) => `
-    <div style="text-align: center;">
+    <div style="text-align: left;">
       ${label(name)}
       <div style="margin-top: 14px; font-size: 30px; line-height: 1.32; color: ${WHITE}; white-space: nowrap;">${lines.join('<br>')}</div>
     </div>`;
