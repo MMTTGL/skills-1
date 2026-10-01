@@ -145,17 +145,19 @@ export function kicker(text, top, width) {
 
 // captions are centred on the figure they label; the +0.16em nudge cancels the
 // trailing letter-spacing so the ink, not the box, sits on the centre line.
-function caption(text, cx, color) {
-  return `<div class="mono" style="position: absolute; left: ${cx}px; top: 1040px; transform: translateX(calc(-50% + 0.16em)); font-size: 22px; letter-spacing: 0.32em; white-space: nowrap; color: ${color};">${text}</div>`;
+// `top` is the caption rule's y; the labels sit 28px below it.
+function caption(text, cx, color, top) {
+  return `<div class="mono" style="position: absolute; left: ${cx}px; top: ${top + 28}px; transform: translateX(calc(-50% + 0.16em)); font-size: 22px; letter-spacing: 0.32em; white-space: nowrap; color: ${color};">${text}</div>`;
 }
-const captionRule = `<div style="position: absolute; left: 110px; right: 110px; top: 1012px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>`;
+const captionRule = (top) =>
+  `<div style="position: absolute; left: 110px; right: 110px; top: ${top}px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>`;
 
-export function captionRow(left, right, leftCx, rightCx) {
-  return `${captionRule}${caption(left, leftCx, CAP_GREY)}${caption(right, rightCx, TEAL_DIM)}`;
+export function captionRow(left, right, leftCx, rightCx, top = 1012) {
+  return `${captionRule(top)}${caption(left, leftCx, CAP_GREY, top)}${caption(right, rightCx, TEAL_DIM, top)}`;
 }
 
-export function captionOne(text, cx, color = CAP_GREY) {
-  return `${captionRule}${caption(text, cx, color)}`;
+export function captionOne(text, cx, color = CAP_GREY, top = 1012) {
+  return `${captionRule(top)}${caption(text, cx, color, top)}`;
 }
 
 export function page(title, inner) {

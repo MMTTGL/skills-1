@@ -1,0 +1,39 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Slayt 1 — Kapak",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Fayda1.dc.html",
+      "title": "Slayt 2 — Fayda 1",
+      "x": 1180,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Fayda2.dc.html",
+      "title": "Slayt 3 — Fayda 2",
+      "x": 2360,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    },
+    {
+      "file": "Fayda3.dc.html",
+      "title": "Slayt 4 — Fayda 3",
+      "x": 3540,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
