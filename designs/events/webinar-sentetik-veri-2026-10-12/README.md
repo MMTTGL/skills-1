@@ -24,6 +24,6 @@ ve gri katılımcılar.
 
 ## Not
 
-Saat afişte çift yazılıdır: `18:00 CEST` (Zoom davetindeki Amsterdam/Berlin
-saati) ve `19:00 TSİ` (Türkiye saati). 12 Ekim 2026'da Orta Avrupa yaz
-saati yürürlüktedir, bu nedenle iki saat arasında bir saat fark vardır.
+Saat afişte Türkiye saatiyle `19:00 TSİ` olarak yazılıdır (Zoom davetindeki
+Amsterdam/Berlin 18:00'e denk gelir). Katılım için afişte toplantı kimliği ve
+parola yer alır; tam bağlantı gönderi açıklamasında paylaşılabilir.
