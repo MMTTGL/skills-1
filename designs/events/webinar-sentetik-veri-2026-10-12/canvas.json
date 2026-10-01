@@ -1,0 +1,16 @@
+{
+  "artboards": [
+    {
+      "file": "Afis.dc.html",
+      "title": "Webinar afişi",
+      "x": 0,
+      "y": 0,
+      "w": 1080,
+      "h": 1350
+    }
+  ],
+  "launch": {
+    "view": "focused",
+    "file": "Afis.dc.html"
+  }
+}
