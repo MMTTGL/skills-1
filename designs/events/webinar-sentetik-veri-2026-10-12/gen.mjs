@@ -1,6 +1,6 @@
 // Webinar poster, 1080x1350, on the "Sentetik veri" series design system.
-// Centred composition: every block is centred on the page, with the series
-// eyebrow at top left and the format label at top right.
+// Left-aligned composition: every block starts on the series eyebrow's edge
+// (80px) and spans the 80–1000 band; the format label sits at top right.
 import { writeFileSync } from 'node:fs';
 import {
   TEAL, TEAL_DOT, TEAL_DIM, GREY_DOT, HDR, WHITE, BODY,
@@ -12,14 +12,13 @@ const figure = (seed, cx, topY, scale, color) =>
   dots(figureDots(mulberry32(seed), 1), cx, topY, scale, color, 4.1, mulberry32(seed + 5), 0.5);
 
 // a row of call tiles: the speaker first, then the audience
-function callTiles(cx, y0, w, h, gap) {
+function callTiles(x0, y0, w, h, gap) {
   const tiles = [
     { teal: true, seed: 71 },
     { teal: false, seed: 72 },
     { teal: false, seed: 73 },
     { teal: false, seed: 74 },
   ];
-  const x0 = cx - (tiles.length * w + (tiles.length - 1) * gap) / 2;
   let out = '';
   tiles.forEach((t, i) => {
     const x = x0 + i * (w + gap);
@@ -43,30 +42,30 @@ const metaCell = (name, lines) => `
       <div style="margin-top: 14px; font-size: 30px; line-height: 1.32; color: ${WHITE}; white-space: nowrap;">${lines.join('<br>')}</div>
     </div>`;
 
-const svg = `<svg width="1080" height="1350" viewBox="0 0 1080 1350" style="position: absolute; left: 0; top: 0;" xmlns="http://www.w3.org/2000/svg">${callTiles(540, 500, 165, 190, 20)}</svg>`;
+const svg = `<svg width="1080" height="1350" viewBox="0 0 1080 1350" style="position: absolute; left: 0; top: 0;" xmlns="http://www.w3.org/2000/svg">${callTiles(80, 500, 215, 200, 20)}</svg>`;
 
 const inner = `${chrome()}
   <div class="mono" style="position: absolute; right: 80px; top: 70px; font-size: 19px; font-weight: 700; letter-spacing: 0.3em; color: ${TEAL};">WEBİNAR</div>
 
-  <div style="position: absolute; left: 90px; width: 900px; top: 180px; text-align: center; font-size: 86px; font-weight: 700; line-height: 1.1; color: ${WHITE};">Sentetik Veri<span style="color: ${TEAL};">:</span></div>
-  <div style="position: absolute; left: 130px; width: 820px; top: 318px; text-align: center; font-size: 46px; line-height: 1.34; color: ${WHITE};">Kavramsal Çerçeve, Teknik Hususlar ve <span style="color: ${TEAL};">Hukuki Sorunlar</span></div>
+  <div style="position: absolute; left: 80px; width: 920px; top: 180px; text-align: left; font-size: 86px; font-weight: 700; line-height: 1.1; color: ${WHITE};">Sentetik Veri<span style="color: ${TEAL};">:</span></div>
+  <div style="position: absolute; left: 80px; width: 860px; top: 318px; text-align: left; font-size: 46px; line-height: 1.34; color: ${WHITE};">Kavramsal Çerçeve, Teknik Hususlar ve <span style="color: ${TEAL};">Hukuki Sorunlar</span></div>
 
   ${svg}
 
-  <div style="position: absolute; left: 90px; width: 900px; top: 742px; text-align: center;">
+  <div style="position: absolute; left: 80px; width: 920px; top: 752px; text-align: left;">
     ${label('KONUŞMACI')}
     <div style="margin-top: 16px; font-size: 52px; color: ${WHITE};">Av. Beste Orhan</div>
   </div>
 
-  <div style="position: absolute; left: 180px; width: 720px; top: 886px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>
+  <div style="position: absolute; left: 80px; width: 920px; top: 896px; height: 1px; background: rgba(197, 216, 233, 0.22);"></div>
 
-  <div style="position: absolute; left: 180px; width: 720px; top: 916px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start;">
+  <div style="position: absolute; left: 80px; width: 920px; top: 926px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start;">
     ${metaCell('TARİH', ['12 Ekim 2026'])}
     ${metaCell('SAAT', ['18:00 CEST', '19:00 TSİ'])}
     ${metaCell('KATILIM', ['Çevrim içi · Zoom'])}
   </div>
 
-  <div style="position: absolute; left: 180px; width: 720px; top: 1068px; box-sizing: border-box; border: 1.5px dashed ${TEAL_DIM}; border-radius: 22px; padding: 24px 32px; text-align: center; display: flex; flex-direction: column; gap: 12px;">
+  <div style="position: absolute; left: 80px; width: 920px; top: 1078px; box-sizing: border-box; border: 1.5px dashed ${TEAL_DIM}; border-radius: 22px; padding: 24px 32px; text-align: left; display: flex; flex-direction: column; gap: 12px;">
     ${label('ZOOM İLE KATILIM', HDR)}
     <div class="mono" style="font-size: 25px; letter-spacing: 0.06em; color: ${WHITE};">zoom.us/j/5817402617</div>
     <div class="mono" style="font-size: 19px; letter-spacing: 0.04em; white-space: nowrap; color: ${BODY};">Toplantı Kimliği: 581 740 2617 &nbsp;·&nbsp; Parola: 103038</div>

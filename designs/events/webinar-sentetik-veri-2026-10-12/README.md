@@ -7,8 +7,9 @@
 ortaktır: lacivert zemin, noktalı figürler, Source Serif 4 başlık,
 harf aralıklı JetBrains Mono etiketler.
 
-Düzen ortalıdır: seri başlığı sol üstte, format etiketi (WEBİNAR) sağ
-üstte, diğer bütün bloklar sayfa merkezine hizalıdır.
+Düzen sola hizalıdır: bütün bloklar seri başlığının sol kenarından (80 px)
+başlar ve 80–1000 px bandını kaplar; format etiketi (WEBİNAR) sağ üsttedir.
+Tarih / saat / katılım bilgisi üç eşit sütundan oluşur.
 
 Görsel: dört "görüşme karesi" — kesikli turkuaz çerçeveli konuşmacı
 ve gri katılımcılar.
